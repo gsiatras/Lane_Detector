@@ -174,37 +174,37 @@ class LaneDetector(object):
                     cv2.line(line_image, (x1, y1), (x2, y2), line_color, line_width)
         line_image = cv2.addWeighted(frame, 0.8, line_image, 1, 1)
 
-        #self.show_image("final image", line_image)
+        self.show_image("Frame with lines", line_image)
         return line_image
 
 
-    def process_video(self, cap):
-        """
-        :param cap: camera input given
-        """
-
-        while True:
-            # Read a frame from the camera
-            ret, frame = cap.read()
-            if not ret:
-                break
-
-            # Detect lanes in the current frame
-            lanes = self.detect_lanes(frame)
-
-            # Display the frame with detected lanes
-            frame_with_lanes = self.display_lines(frame, lanes)
-
-            # Show the processed frame
-            cv2.imshow("Processed Video", frame_with_lanes)
-
-            # Break the loop when the 'q' key is pressed
-            if cv2.waitKey(1) & 0xFF == ord('q'):
-                break
-
-        # Release the camera capture object and close all windows
-        cap.release()
-        cv2.destroyAllWindows()
+    # def process_video(self, cap):
+    #     """
+    #     :param cap: camera input given
+    #     """
+    #
+    #     while True:
+    #         # Read a frame from the camera
+    #         ret, frame = cap.read()
+    #         if not ret:
+    #             break
+    #
+    #         # Detect lanes in the current frame
+    #         lanes = self.detect_lanes(frame)
+    #
+    #         # Display the frame with detected lanes
+    #         frame_with_lanes = self.display_lines(frame, lanes)
+    #
+    #         # Show the processed frame
+    #         cv2.imshow("Processed Video", frame_with_lanes)
+    #
+    #         # Break the loop when the 'q' key is pressed
+    #         if cv2.waitKey(1) & 0xFF == ord('q'):
+    #             break
+    #
+    #     # Release the camera capture object and close all windows
+    #     cap.release()
+    #     cv2.destroyAllWindows()
 
 
 

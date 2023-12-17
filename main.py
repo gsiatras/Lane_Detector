@@ -7,6 +7,7 @@ def setup_input_1frame():
     frame = cv2.imread(image_path)
     return frame
 
+
 def setup_camera_input():
     """
     get live camera input

@@ -1,4 +1,4 @@
-from image_handler import LaneDetector
+from lane_detector import LaneDetector
 import cv2
 
 
